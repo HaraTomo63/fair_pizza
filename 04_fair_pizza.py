@@ -47,7 +47,7 @@ class PizzaGame:
             self.cut_line_angle += self.rotation_speed  # この値で回転速度を調整
 
             # スペースキーでカット
-            if pyxel.btnp(pyxel.KEY_SPACE):  
+            if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT) or pyxel.btnp(pyxel.KEY_SPACE):  
                 self.make_cut()
 
             # 目標のカット数が達成されたらスコア更新とヘルス計算
@@ -56,7 +56,7 @@ class PizzaGame:
                 self.is_paused = True  # ゲーム一時停止
 
         # ゲームが一時停止している場合
-        elif pyxel.btnp(pyxel.KEY_SPACE):
+        elif pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT) or pyxel.btnp(pyxel.KEY_SPACE):
             # 一時停止後、再開時にカット数と最大カット数を更新
             self.target_cuts = random.randint(MIN_CUTS, 4 + self.level * 2)  # レベルに基づいた新しい最大カット数]
             self.speed_rand = random.randint(0, 7) / 10 + 0.7
