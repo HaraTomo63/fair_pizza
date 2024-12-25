@@ -143,9 +143,9 @@ class PizzaGame:
                 pyxel.line(START_X, START_Y, x1, y1, pyxel.COLOR_RED)
 
             # Display quality of cuts
-            if abs(area_difference - 1) < 0.03:
+            if abs(area_difference - 1) < 0.04:
                 pyxel.text(SCREEN_WIDTH // 2 - 40, SCREEN_HEIGHT // 2 + 10, "Perfect!!", pyxel.COLOR_WHITE)
-            elif abs(area_difference - 1) < 0.1:
+            elif abs(area_difference - 1) < 0.11:
                 pyxel.text(SCREEN_WIDTH // 2 - 40, SCREEN_HEIGHT // 2 + 10, "Great!", pyxel.COLOR_WHITE)
             elif abs(area_difference - 1) < (self.target_cuts / 22):
                 pyxel.text(SCREEN_WIDTH // 2 - 40, SCREEN_HEIGHT // 2 + 10, "Good!", pyxel.COLOR_WHITE)
@@ -190,9 +190,9 @@ class PizzaGame:
                 else:
                     self.bonus = 5
                 
-                if abs(area_difference - 1) < 0.03:
+                if abs(area_difference - 1) < 0.04:
                     self.score += 5 * self.bonus
-                elif abs(area_difference - 1) < 0.1:
+                elif abs(area_difference - 1) < 0.11:
                     self.score += 3 * self.bonus
                 elif abs(area_difference - 1) < (self.target_cuts / 22):
                     self.score += 2 * self.bonus
